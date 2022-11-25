@@ -61,23 +61,55 @@ fn main() {
 
     daltonic(Color::Red);
 
-    //generics (T)
-    struct Complex<T> {
-        real: T,
-        imaginary: T,
-    }
-
-
-    fn complex(real: f64, imaginary: f64) -> Complex<f64> {
-        Complex { real, imaginary }
-    }
-
-    let c = complex(3.0, 4.0);
-    //a complex number a + bi is represented as (a, b)
+    fn print_complex() {
+        let c = complex(3.0, 4.0);
+        //a complex number a + bi is represented as (a, b)
     
-    let d = Complex { real: 3, imaginary: 4 };
-    println!("Complex: {} + {}i", c.real, c.imaginary);
-    println!("Complex: {} + {}i", d.real, d.imaginary);
+        let d = Complex { real: 3, imaginary: 4 };
+        println!("Complex: {} + {}i", c.real, c.imaginary);
+        println!("Complex: {} + {}i", d.real, d.imaginary);    
+    }
+
+    print_complex();
+
+    struct Foo<T> {
+        bar: T,
+    }
+
+    //methods
+    //implement a generic type of foo
+    impl<T> Foo<T> {
+        fn bar(&self) -> &T { //self reference
+            &self.bar
+        }
+
+        fn bar_mut(&mut self) -> &mut T { //mutable reference
+            &mut self.bar
+        }
+
+        fn into_bar(self) -> T { //consume self
+            self.bar
+        }
+    }
+
+    //instanciate Foo
+    let a_foo = Foo { bar: 42 }; //nerd :D
+    println!("Foo: {}", a_foo.bar());
+    
+    
+
+   
 
 
+
+}
+
+struct Complex<T> {
+    real: T,
+    imaginary: T,
+}
+
+
+fn complex(real: f64, imaginary: f64) -> Complex<f64> {
+    Complex { real, imaginary }
 }
