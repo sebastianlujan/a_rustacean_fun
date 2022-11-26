@@ -1,0 +1,1 @@
+/Users/sebas/Documents/coding/a_new_rustacean_in_the_street/syntax-rust/target/debug/libhello_rust.rlib: /Users/sebas/Documents/coding/a_new_rustacean_in_the_street/syntax-rust/src/first.rs /Users/sebas/Documents/coding/a_new_rustacean_in_the_street/syntax-rust/src/lib.rs
