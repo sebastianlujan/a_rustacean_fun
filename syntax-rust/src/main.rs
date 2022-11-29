@@ -137,6 +137,9 @@ fn main() {
     let b = Box::new(5);
     println!("\nBox: {}", b);
 
+    fn isEven(n : i32) -> bool {
+        return n % 2 == 0;
+    }
 
 }
 
